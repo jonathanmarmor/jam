@@ -61,6 +61,25 @@ def ngrams(iterable, n):
         yield iterable[i:i + n]
 
 
+def get_first_item(items, value, key='id'):
+    """
+    >>> items = [{'c': 'd', 'bacon': 5}, {'a': 'b', 'bacon': 4}]
+    >>> get_first_item(items, 4, key='bacon')
+    {'a': 'b', 'bacon': 4}
+
+    """
+    return next((item for item in items if item.get(key) == value), None)
+
+
+def get_multiple_items(items, value, key='id'):
+    """
+    >>> items = [{'c': 'd', 'bacon': 5}, {'a': 'b', 'bacon': 4}, {1: 7, 'bacon': 4}]
+    >>> get_multiple_items(items, 4, key='bacon')
+    [{'a': 'b', 'bacon': 4}, {1: 7, 'bacon': 4}]
+
+    """
+    return [item for item in items if item.get(key) == value]
+
 
 if __name__ == '__main__':
     import doctest

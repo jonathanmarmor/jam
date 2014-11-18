@@ -3,13 +3,23 @@
 import random
 
 
+def weighted_choice_lists(weights, options):
+    sum_of_weights = sum(weights)
+    rand = random.uniform(0, sum_of_weights)
+    total = 0
+    for item, weight in zip(options, weights):
+        total += weight
+        if rand < total:
+            return item
+
+
 def weighted_choice(pairs):
     """Choose an item from a list of (item, weight) pairs
 
     >>> chords = [((0, 4, 7), 10), ((0, 4, 7), 5)]
 
     """
-    weights = [weight for item, weight in pairs]
+    weights = [weight for _, weight in pairs]
     sum_of_weights = sum(weights)
     rand = random.uniform(0, sum_of_weights)
     total = 0

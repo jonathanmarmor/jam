@@ -204,6 +204,10 @@ def frequency_to_pitchspace(frequency, a440=440.0):
     return 12 * (math.log(frequency / a440) / math.log(2)) + 69
 
 
+def ratio_to_cents(f1, f2):
+    return 1200 * math.log(float(f1) / float(f2), 2)
+
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()

@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jam',
-    version='0.0.2',
+    version='0.0.3',
     description="Jonathan's assorted music utilities",
     author='Jonathan Marmor',
     author_email='jmarmor@gmail.com',

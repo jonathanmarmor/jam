@@ -1,3 +1,5 @@
+"""Utilities for shuffling lists"""
+
 from itertools import groupby
 import random
 

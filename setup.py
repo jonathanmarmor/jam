@@ -8,9 +8,7 @@ setup(
     author_email='jmarmor@gmail.com',
     url='https://github.com/jonathanmarmor/jam',
     packages=['jam'],
-    long_description="""
-        A class which makes handling MIDI data easy in Python.  Provides methods for extracting and modifying the useful parts of MIDI files.
-    """,
+    long_description="""Jonathan's assorted music utilities.""",
     classifiers=[
         "License :: OSI Approved :: GNU General Public License (GPL)",
         "Programming Language :: Python",

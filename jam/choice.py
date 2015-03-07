@@ -19,17 +19,11 @@ def weighted_choice(pairs):
     >>> chords = [((0, 4, 7), 10), ((0, 4, 7), 5)]
 
     """
-    weights = [weight for _, weight in pairs]
-    sum_of_weights = sum(weights)
-    rand = random.uniform(0, sum_of_weights)
-    total = 0
-    for item, weight in pairs:
-        total += weight
-        if rand < total:
-            return item
+    weights, options = zip(*pairs)
+    return weighted_choice_lists(weights, options)
 
 
-def dict_weighted_choice(d):
+def weighted_choice_dict(d):
     """Choose a key from a dict using the values as weights.
 
     Works for collections.Counter using the counts as weights.
@@ -42,7 +36,7 @@ def dict_weighted_choice(d):
     return weighted_choice(d.items())
 
 
-def list_of_dicts_weighted_choice(items, item_key='item', weight_key='weight'):
+def weighted_choice_list_of_dicts(items, item_key='item', weight_key='weight'):
     """Choose an item from a list of dicts where one of each dict's members is a weight.
 
     >>> chords = [{'chord': (0, 4, 7), 'count': 10}, {'chord': (0, 4, 7), 'count': 5}]

@@ -57,6 +57,9 @@ def ngrams(iterable, n):
     [[0, 1, 2], [1, 2, 3], [2, 3, 4], [3, 4, 5]]
 
     """
+    if n == 1:
+        for item in iterable:
+            yield [item]
     for i, item in enumerate(iterable[:-n + 1]):
         yield iterable[i:i + n]
 
